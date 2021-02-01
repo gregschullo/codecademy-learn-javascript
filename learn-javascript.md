@@ -234,4 +234,190 @@ The `switch` keyword initiates the statement and is followed by ( ... ), which c
 ### What are Functions?
 
 We often use code to perform a specific task multiple times. Instead of rewriting the same code over and over, we can group a block of code together and associate it with one task, then we can reuse that block of code whenever we need to perform the task again. We achieve this by creating a function.  
-**function** - a reusable block of code that groups together a sequence of statements to perform a specific task. 
+**function** - a reusable block of code that groups together a sequence of statements to perform a specific task.  
+
+### Function Declarations
+
+A function declaration is a way to create a function in JavaScript. A function declaration binds a function to a name, or an *identifier*.  
+A function declaration consists of:  
+
+- the `function` keyword
+- the name (identifier) of the function followed by parentheses.
+- A function body, or the block of statements required to perform a specific task, enclosed in curly braces (`{}`)  
+
+### Calling a Function
+
+The code inside the body of a function is only executed when the function is called.  
+To call a function, type the function name (identifier) followed by parenthesis.  
+
+Example: `functionIdentifier();`  
+
+### Parameters and Arguments
+
+Functions can take inputs and use the inputs to perform a task. When declaring a function, we can specify its *parameters*. Parameters allow functions to accept input(s) and perform a task using the input(s). Parameters are placeholders for information that will be passed to the function when it is called.  
+
+**arguments** - values that are passed to a function when it is called.  
+Arguments can be passed to the function as values or variables.  
+
+### Default Parameters
+
+**default parameters** - allow parameters to have a predetermined value in case there is no argument passed into the function or if the argument is undefined when called.  
+
+By using a default parameter, we account for situations when an argument isn’t passed into a function that is expecting an argument.  
+
+### Return
+
+**return** - a JavaScript keyword that allows for capturing the output of a function and passing back the information.  
+
+The return keyword is powerful because it allows functions to produce an output. We can then save the output to a variable for later use.  
+
+### Helper Functions
+
+You can return the value of a function inside another function.  
+**helper functions** - a function called within another function.  
+
+### Function Expressions
+
+A function expression is another way to define a function. In a function expression, the function name is usually omitted. A function with no name is called an anonymous function. A function expression is often stored in a variable in order to refer to it.  
+
+### Arrow Functions
+
+**arrow functions** - remove the need to type out the `function` keyword every time you create a function.  
+Instead, you first include the parameters inside the ( ) and then add an arrow => that points to the function body surrounded in `{}`.  
+Also known as “fat arrow” () => notation.  
+
+Example:  
+
+```javascript
+const rectangleArea = (width, height) => {
+  let area = width * height;
+  return area;
+};
+```
+
+### Concise Body Arrow Functions
+
+Functions that take only a single parameter do not need that parameter to be enclosed in parentheses. However, if a function takes zero or multiple parameters, parentheses are required.  
+
+Zero Parameters - `const functionName = () => {};`  
+One Parameter - `const functionName = paramOne => {};`  
+Two or More Parameters - `const functionName = (paramOne, paramTwo) => {};`  
+
+A function body composed of a single-line block does not need curly braces. Without the curly braces, whatever that line evaluates will be automatically returned. The contents of the block should immediately follow the arrow => and the return keyword can be removed. This is referred to as *implicit return*.  
+
+Single Line Block - `const sumNumbers = number => number + number;`  
+Multi Line Block:  
+
+```javascript
+const sumNumbers = number => {
+    const sum = number + number;
+    return sum;
+};
+```
+
+## Scope
+
+### Blocks and Scope
+
+A block is code inside a set of curly braces.  
+
+### Global Scope
+
+Scope is the context in which our variables are declared. We think about scope in relation to blocks because variables can exist either outside of or within these blocks.  
+
+**global variables** - variables declared outside of blocks. These variables have a global scope.  
+
+### Block Scope
+
+**local variables** - variables only accessible within a block of code. Also known as block scope variables.  
+
+### Scope Pollution
+
+Scope pollution is when we have too many global variables that exist in the global namespace, or when we reuse variables across different scopes.  
+Scope pollution makes it difficult to keep track of our different variables and sets us up for potential accidents. For example, globally scoped variables can collide with other variables that are more locally scoped, causing unexpected behavior.  
+
+### Scope Review
+
+**scope** - the idea in programming that some variables are accessible/inaccessible from other parts of the program.  
+**blocks** - statements that exist within curly braces {}.
+**global scope** - refers to the context within which variables are accessible to every part of the program.  
+**global variables** - variables that exist within global scope.  
+**block scope** refers to the context within which variables that are accessible only within the block they are defined.  
+**local variables** - variables that exist within block scope.  
+**global namespace** - the space in our code that contains globally scoped information.  
+**scope pollution** - when too many variables exist in a namespace or variable names are reused.  
+
+## Arrays
+
+An array is a means of storing data in a list like structure.  
+Each content item inside an array is called an *element*.  
+
+### Accessing Elements
+
+**index** - an element in an array's numbered position.  
+Individual elements (items) can be accessed using their index.  
+Arrays in JavaScript are zero-indexed, meaning the positions start counting from 0.  
+
+### Update Elements
+
+Once you have access to an element in an array, you can update its value.  
+
+### Arrays with Let and Const
+
+You can declare variables with both the let and const keywords. Variables declared with let can be reassigned.  
+Variables declared with the const keyword cannot be reassigned. However, elements in an array declared with const can be changed, but we cannot reassign a new array or a different value.
+
+### Helpful Array Methods
+
+`.length`  
+`.push()`  
+`.pop()`  
+
+[More Array Methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#static_methods)
+
+### Nested Arrays
+
+Arrays can store other arrays. These are known as nested arrays.  
+To access the nested arrays we can use bracket notation with the index value.  
+
+## Loops
+
+A loop is a tool in programming that repeats a set of instructions until a specified condition, called a *stopping condition*, is reached.  
+
+**iterate** - to repeat  
+
+### For Loops
+
+A for loop contains three expressions separated by ; inside the parentheses:
+
+1. an initialization starts the loop and can also be used to declare the iterator variable.
+1. a stopping condition is the condition that the iterator variable is evaluated against— if the condition evaluates to true the code block will run, and if it evaluates to false the code will stop.
+1. an iteration statement is used to update the iterator variable on each loop.
+
+### Looping through an Array
+
+To loop through each element in an array, a for loop should use the array’s .length property in its condition.  
+
+### While Loop
+
+The while loop starts with the **while** keyword followed by a *stopping condition*, or *test condition*. This will be evaluated before each round of the loop. While the condition evaluates to true, the block will continue to run. Once it evaluates to false the loop will stop.  
+
+### Do...While Statements
+
+Do While statements are used when you want a piece of code to be run at least one time and then keep doing it until a specified condition is no longer met.  
+
+## Iterators
+
+## Objects
+
+## Classes
+
+## Browser Compatibility
+
+## Modules
+
+## Promises
+
+## Async-Await
+
+## Requests
