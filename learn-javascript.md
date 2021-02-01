@@ -406,6 +406,10 @@ The while loop starts with the **while** keyword followed by a *stopping conditi
 
 Do While statements are used when you want a piece of code to be run at least one time and then keep doing it until a specified condition is no longer met.  
 
+### break Keyword
+
+The break keyword allows programs to “break” out of the loop from within the loop’s block.  
+
 ## Iterators
 
 ## Objects
